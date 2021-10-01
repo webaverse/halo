@@ -18,7 +18,7 @@ export default () => {
     ys[i] = 1-skirtGeometry.attributes.position.array[i*3+1]/height;
   }
   skirtGeometry.setAttribute('y', new THREE.BufferAttribute(ys, 1));
-  // skirtGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, -height/2, 0));
+  skirtGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, height/2, 0));
   const skirtMaterial = new THREE.ShaderMaterial({
     uniforms: {
       uAnimation: {
